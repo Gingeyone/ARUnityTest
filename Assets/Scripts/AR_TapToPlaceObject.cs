@@ -15,6 +15,8 @@ public class AR_TapToPlaceObject : MonoBehaviour
     private Pose placementPose;
     private bool placementPoseIsValid = false;
 
+    private bool isObjectInScene = false;
+
     void Start()
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
@@ -25,13 +27,22 @@ public class AR_TapToPlaceObject : MonoBehaviour
     void Update()
     {
 
-        UpdatePlacementPose();
-        UpdatePlacementIndicator();
+        if (isObjectInScene == false)
+        {
+            UpdatePlacementPose();
+            UpdatePlacementIndicator();
+        }
+        else
+        {
+            placementIndicator.SetActive(false);
+        }
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && isObjectInScene == false)
         {
 
             PlaceObject();
+            isObjectInScene = true;
+
         }
 
         
