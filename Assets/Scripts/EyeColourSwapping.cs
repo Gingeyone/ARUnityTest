@@ -4,11 +4,18 @@ using UnityEngine;
 using TMPro;
 using UnityEditor;
 using UnityEngine.UI;
+using System;
 
 public class EyeColourSwapping : MonoBehaviour
 {
+
+    public Button enterModeButton;
+    public Image imageUIBackground;
+
     [SerializeField]
     public Material[] eyeColourMaterials = new Material[4];
+
+
     
 
     public GameObject leftEyeModel;
@@ -20,13 +27,25 @@ public class EyeColourSwapping : MonoBehaviour
     {
 
         //once a model is loaded attatch the eye parts for swapping
-        
-        
+
+        leftEyeModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/head_grp/L_eye_geo");
+        rightEyeModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/head_grp/R_eye_geo");
+
+
+
     }
 
     void Update()
     {
         
+    }
+
+
+    public void Btn_EnterSelectMode()
+    {
+        imageUIBackground.transform.position = new Vector3(0, 0, 0);
+
+
     }
 
     public void Btn_EyeSwap(int index)
@@ -52,8 +71,6 @@ public class EyeColourSwapping : MonoBehaviour
 
 
     }
-
-
 
 
 }

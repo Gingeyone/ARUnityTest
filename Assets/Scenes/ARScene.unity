@@ -651,11 +651,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457108907}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6a7d296b02226545a3a8f56213c628a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterModeButton: {fileID: 1706686863}
+  imageUIBackground: {fileID: 1126724512}
   shoeColourMaterials:
   - {fileID: 2100000, guid: 4daf7c627a55d3a4fb8e22c0278795b8, type: 2}
   - {fileID: 2100000, guid: 62665a2a9a9e381459d75c49e381fd8f, type: 2}
@@ -674,11 +676,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457108907}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a99201c347f103428a6f6321ab8b19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterModeButton: {fileID: 1380048297}
+  imageUIBackground: {fileID: 1475494236}
   eyeColourMaterials:
   - {fileID: 2100000, guid: 7f1b1c09546bc9b449158762853d25a5, type: 2}
   - {fileID: 2100000, guid: fd227b1b582bc914f925d7a66e9b8f6c, type: 2}
@@ -1091,7 +1095,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementIndicator: {fileID: 65284393}
-  objectToPlace: {fileID: 2732157648829370830, guid: 5b3cd90149b6245a8b06a5aa44d76098, type: 3}
+  objectToPlace: {fileID: 914543126174341609, guid: 1ad6f015fa42ae341a9ba749f27da530, type: 3}
+  eyeColourSwapping: {fileID: 457108909}
+  shoeColourSwapping: {fileID: 457108908}
 --- !u!4 &782628377
 Transform:
   m_ObjectHideFlags: 0
@@ -1770,7 +1776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1380048298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457108909}
+        m_TargetAssemblyTypeName: EyeColourSwapping, Assembly-CSharp
+        m_MethodName: Btn_EnterSelectMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1380048298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2491,7 +2509,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1706686864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457108907}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1706686864
 MonoBehaviour:
   m_ObjectHideFlags: 0

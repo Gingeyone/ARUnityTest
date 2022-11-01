@@ -7,8 +7,13 @@ using UnityEngine.UI;
 
 public class ShoeColourSwapping : MonoBehaviour
 {
+
+    public Button enterModeButton;
+    public Image imageUIBackground;
+
     [SerializeField]
     public Material[] shoeColourMaterials = new Material[4];
+
 
 
     public GameObject leftShoeModel;
@@ -22,6 +27,14 @@ public class ShoeColourSwapping : MonoBehaviour
     private void Start()
     {
         //when model is loaded find the gameobjects here
+
+        leftShoeModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/L_shoe_geo_grp/L_shoe_geo");
+        leftShoeLaceModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/L_shoe_geo_grp/L_shoelace_geo");
+        leftShoeTopModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/L_shoe_geo_grp/L_shoeTop_geo");
+
+        rightShoeModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/R_shoe_geo_grp/R_shoe_geo");
+        rightShoeLaceModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/R_shoe_geo_grp/R_shoelace_geo");
+        rightShoeTopModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/R_shoe_geo_grp/R_shoeTop_geo");
     }
 
     public void Btn_ShoeSwap(int index)
@@ -50,6 +63,14 @@ public class ShoeColourSwapping : MonoBehaviour
             Debug.Log("This is the same as the current Shoe colour. Do Nothing");
             return;
         }
+
+
+    }
+
+
+    public void Btn_EnterSelectMode()
+    {
+        imageUIBackground.transform.position = new Vector3(0, 0, 0);
 
 
     }

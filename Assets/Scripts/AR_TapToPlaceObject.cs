@@ -16,6 +16,8 @@ public class AR_TapToPlaceObject : MonoBehaviour
     private bool placementPoseIsValid = false;
 
     private bool isObjectInScene = false;
+    public EyeColourSwapping eyeColourSwapping;
+    public ShoeColourSwapping shoeColourSwapping;
 
     void Start()
     {
@@ -42,6 +44,8 @@ public class AR_TapToPlaceObject : MonoBehaviour
 
             PlaceObject();
             isObjectInScene = true;
+            eyeColourSwapping.enabled = true;
+            shoeColourSwapping.enabled = true;
 
         }
 
