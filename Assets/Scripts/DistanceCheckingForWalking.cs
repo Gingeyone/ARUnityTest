@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.Experimental.XR;
+using System;
+using UnityEngine.XR.ARSubsystems;
 
 public class DistanceCheckingForWalking : MonoBehaviour
 {
@@ -15,7 +19,7 @@ public class DistanceCheckingForWalking : MonoBehaviour
 
     private void Start()
     {
-        distanceCube = GameObject.Find("AR Session Origin/AR Camera");
+        distanceCube = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
