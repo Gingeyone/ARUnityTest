@@ -6,6 +6,9 @@ using UnityEngine.Experimental.XR;
 using System;
 using UnityEngine.XR.ARSubsystems;
 
+/// <summary>
+/// Handles the placement indicator code to appear on Horizontal planes and then Instantiate a model on a tap of a screen
+/// </summary>
 public class AR_TapToPlaceObject : MonoBehaviour
 {
     public GameObject placementIndicator;
@@ -34,22 +37,15 @@ public class AR_TapToPlaceObject : MonoBehaviour
             UpdatePlacementPose();
             UpdatePlacementIndicator();
         }
-        else
-        {
-             
-        }
 
         if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && isObjectInScene == false)
         {
-
             PlaceObject();
             isObjectInScene = true;
             eyeColourSwapping.enabled = true;
             shoeColourSwapping.enabled = true;
 
-        }
-
-        
+        }        
     }
 
     private void PlaceObject()
@@ -57,12 +53,13 @@ public class AR_TapToPlaceObject : MonoBehaviour
         Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
     }
 
-    //Update placment Indicator to show if In can drop an object
+    /// <summary>
+    /// Update the sprite to appear if valid, if not set to not active
+    /// </summary>
     private void UpdatePlacementIndicator()
     {
         if (placementPoseIsValid)
         {
-
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
         }
@@ -72,7 +69,9 @@ public class AR_TapToPlaceObject : MonoBehaviour
         }
     }
 
-    //Check if i can place an object
+    /// <summary>
+    /// Check if current placement for the indicator is a valid horizontal plane
+    /// </summary>
     private void UpdatePlacementPose() 
     {
         var screenCentre = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
@@ -86,9 +85,7 @@ public class AR_TapToPlaceObject : MonoBehaviour
             placementPose = hits[0].pose;
 
             var cameraForward = Camera.current.transform.forward;
-            var cameraBaring = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-
-       
+            var cameraBaring = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;     
 
             placementPose.rotation = Quaternion.LookRotation(cameraBaring);
         }

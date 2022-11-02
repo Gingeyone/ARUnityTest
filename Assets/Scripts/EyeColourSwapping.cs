@@ -6,6 +6,9 @@ using UnityEditor;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// Handles the Material swapping system for the Shoes on the Model
+/// </summary>
 public class EyeColourSwapping : MonoBehaviour
 {
 
@@ -22,12 +25,10 @@ public class EyeColourSwapping : MonoBehaviour
     public GameObject rightEyeModel;
 
 
-
-
     void Start()
     {
 
-        //once a model is loaded attatch the eye parts for swapping
+        //once a model is loaded attach the eye parts for swapping
 
         leftEyeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/head_grp/L_eye_geo");
         rightEyeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/head_grp/R_eye_geo");

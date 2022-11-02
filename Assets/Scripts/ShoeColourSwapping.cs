@@ -5,6 +5,9 @@ using TMPro;
 using UnityEditor;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles the Material swapping system for the Shoes on the Model
+/// </summary>
 public class ShoeColourSwapping : MonoBehaviour
 {
 
@@ -13,7 +16,6 @@ public class ShoeColourSwapping : MonoBehaviour
 
     [SerializeField]
     public Material[] shoeColourMaterials = new Material[4];
-
     public Color[] shoeColourUI = new Color[4];
     public Image currentColour;
 
@@ -27,7 +29,7 @@ public class ShoeColourSwapping : MonoBehaviour
 
     private void Start()
     {
-        //when model is loaded find the gameobjects here
+        //once a model is loaded attach the shoe parts for swapping
 
         leftShoeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/L_shoe_geo_grp/L_shoe_geo");
         leftShoeLaceModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/L_shoe_geo_grp/L_shoelace_geo");
@@ -42,11 +44,9 @@ public class ShoeColourSwapping : MonoBehaviour
 
     public void Btn_ShoeSwap(int index)
     {
-        //If eyes are not this colour, make them this colour
-
         if (rightShoeModel.GetComponent<SkinnedMeshRenderer>().material != shoeColourMaterials[index])
         {
-            if (index > 3) return; //Checking the material is in the list
+            if (index > 3) return; //Checking that we are not over the list
 
             Debug.Log("This is a new shoe colour. Shoe Colour Changed");
 
@@ -60,15 +60,7 @@ public class ShoeColourSwapping : MonoBehaviour
             leftShoeTopModel.GetComponent<SkinnedMeshRenderer>().material = shoeColourMaterials[index];
 
             currentColour.color = shoeColourUI[index];
-
-
         }
-        else
-        {
-            Debug.Log("This is the same as the current Shoe colour. Do Nothing");
-            return;
-        }
-
 
     }
 
@@ -76,8 +68,6 @@ public class ShoeColourSwapping : MonoBehaviour
     public void Btn_EnterSelectMode()
     {
         imageUIBackground.transform.position = new Vector3(0, 0, 0);
-
-
     }
 
 }

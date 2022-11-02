@@ -10,6 +10,10 @@ using UnityEditor;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// A controller that handles the UI buttons that decide which if any of the colour selection menus will be put on screen.
+/// </summary>
+
 public class UIController : MonoBehaviour
 {
 
@@ -18,6 +22,12 @@ public class UIController : MonoBehaviour
 
     public TMP_Text tMP_Text;
     public DistanceCheckingForWalking distanceCheckingForWalking;
+
+    public void Start()
+    {
+        distanceCheckingForWalking = GameObject.Find("Girl_FBX2020_Prefab(Clone)").GetComponentInChildren<DistanceCheckingForWalking>();
+    }
+
 
     public void Btn_eyeButton()
     {
@@ -48,11 +58,17 @@ public class UIController : MonoBehaviour
 
     }
 
-    public void Update ()
+    public void Update()
     {
         //Update the debug UI to show the distance between the camera and the Model
 
-        tMP_Text.text = "Current Distance: " + distanceCheckingForWalking.currentDistanceRounded;
+        
+
+            tMP_Text.text = "Current Distance: " + distanceCheckingForWalking.currentDistanceRounded;
+
+        //currentDistance = Vector3.Distance(distanceCube.transform.position, transform.position);
+        //currentDistanceRounded = Mathf.Round(currentDistance * 100) / 100;
+
     }
 
 

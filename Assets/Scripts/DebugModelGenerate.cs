@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A test version of Instantiating a prefab model with attached scripts to use in a non-AR scene
+/// </summary>
 public class DebugModelGenerate : MonoBehaviour
 {
     public EyeColourSwapping eyeColourSwapping;
