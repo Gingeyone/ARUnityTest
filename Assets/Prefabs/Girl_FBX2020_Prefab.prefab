@@ -3823,7 +3823,7 @@ GameObject:
   - component: {fileID: 914543126174341615}
   - component: {fileID: 6071973857730146824}
   m_Layer: 0
-  m_Name: Girl_FBX2020_Prefab
+  m_Name: Girl_FBX2020_Prefab 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3883,7 +3883,7 @@ MonoBehaviour:
   currentDistanceRounded: 0
   distanceCube: {fileID: 0}
   animController: {fileID: 914543126174341615}
-  debugText: {fileID: 0}
+  debugText: {fileID: 8660267421912196493, guid: fd1cbff545e31ab47aae01e515ad1c76, type: 3}
 --- !u!1 &914543126192076755
 GameObject:
   m_ObjectHideFlags: 0

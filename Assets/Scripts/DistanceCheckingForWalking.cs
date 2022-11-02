@@ -12,16 +12,15 @@ public class DistanceCheckingForWalking : MonoBehaviour
     public Animator animController; // Camera Window
     public TMP_Text debugText;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        
+        distanceCube = GameObject.Find("AR Session Origin/AR Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
-
         currentDistance = Vector3.Distance(distanceCube.transform.position, transform.position);
         currentDistanceRounded = Mathf.Round(currentDistance * 100) / 100;
         debugText.text = "Current Distance: " + currentDistanceRounded;
