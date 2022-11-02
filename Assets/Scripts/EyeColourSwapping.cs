@@ -15,11 +15,12 @@ public class EyeColourSwapping : MonoBehaviour
     [SerializeField]
     public Material[] eyeColourMaterials = new Material[4];
 
-
-    
+    public Color[] eyeColourUI = new Color[4];
+    public Image currentColour;
 
     public GameObject leftEyeModel;
     public GameObject rightEyeModel;
+
 
 
 
@@ -31,6 +32,7 @@ public class EyeColourSwapping : MonoBehaviour
         leftEyeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/head_grp/L_eye_geo");
         rightEyeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/head_grp/R_eye_geo");
 
+        currentColour.color = eyeColourUI[0];
 
 
     }
@@ -60,6 +62,8 @@ public class EyeColourSwapping : MonoBehaviour
 
             rightEyeModel.GetComponent<SkinnedMeshRenderer>().material = eyeColourMaterials[index];
             leftEyeModel.GetComponent<SkinnedMeshRenderer>().material = eyeColourMaterials[index];
+
+            currentColour.color = eyeColourUI[index];
 
 
         }
