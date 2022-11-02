@@ -14,7 +14,8 @@ public class ShoeColourSwapping : MonoBehaviour
     [SerializeField]
     public Material[] shoeColourMaterials = new Material[4];
 
-
+    public Color[] shoeColourUI = new Color[4];
+    public Image currentColour;
 
     public GameObject leftShoeModel;
     public GameObject leftShoeLaceModel;
@@ -35,6 +36,8 @@ public class ShoeColourSwapping : MonoBehaviour
         rightShoeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/R_shoe_geo_grp/R_shoe_geo");
         rightShoeLaceModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/R_shoe_geo_grp/R_shoelace_geo");
         rightShoeTopModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/R_shoe_geo_grp/R_shoeTop_geo");
+
+        currentColour.color = shoeColourUI[3];
     }
 
     public void Btn_ShoeSwap(int index)
@@ -55,6 +58,8 @@ public class ShoeColourSwapping : MonoBehaviour
             leftShoeModel.GetComponent<SkinnedMeshRenderer>().material = shoeColourMaterials[index];
             leftShoeLaceModel.GetComponent<SkinnedMeshRenderer>().material = shoeColourMaterials[index];
             leftShoeTopModel.GetComponent<SkinnedMeshRenderer>().material = shoeColourMaterials[index];
+
+            currentColour.color = shoeColourUI[index];
 
 
         }
