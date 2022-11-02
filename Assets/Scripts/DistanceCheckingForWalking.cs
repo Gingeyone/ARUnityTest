@@ -62,7 +62,14 @@ public class DistanceCheckingForWalking : MonoBehaviour
 
         //targetVector = distanceCube.transform.position - transform.position;
 
-        transform.LookAt(distanceCube.transform);
+        //transform.LookAt(distanceCube.transform);
+
+
+
+        var lookPos = distanceCube.transform.position - transform.position;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
 
 
