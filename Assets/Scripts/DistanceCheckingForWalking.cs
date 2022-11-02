@@ -15,11 +15,15 @@ public class DistanceCheckingForWalking : MonoBehaviour
     public GameObject distanceCube;
     public Animator animController; // Camera Window
     public TMP_Text debugText;
+    public GameObject Test;
 
 
     private void Start()
     {
         distanceCube = GameObject.FindGameObjectWithTag("MainCamera");
+        //Test = GameObject.Find("Debug");
+        
+            
     }
 
     // Update is called once per frame
@@ -27,7 +31,7 @@ public class DistanceCheckingForWalking : MonoBehaviour
     {
         currentDistance = Vector3.Distance(distanceCube.transform.position, transform.position);
         currentDistanceRounded = Mathf.Round(currentDistance * 100) / 100;
-        debugText.text = "Current Distance: " + currentDistanceRounded;
+        //debugText.text = "Current Distance: " + currentDistanceRounded;
 
         if (currentDistance > distanceToCheck)
         {

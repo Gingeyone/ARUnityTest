@@ -86,7 +86,9 @@ public class AR_TapToPlaceObject : MonoBehaviour
             placementPose = hits[0].pose;
 
             var cameraForward = Camera.current.transform.forward;
-            var cameraBaring = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+            var cameraBaring = new Vector3(cameraForward.x + 180, 0, cameraForward.z).normalized;
+
+       
 
             placementPose.rotation = Quaternion.LookRotation(cameraBaring);
         }
