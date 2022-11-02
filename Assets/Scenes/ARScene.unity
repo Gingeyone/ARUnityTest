@@ -310,6 +310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DistanceDebugText
       objectReference: {fileID: 0}
+    - target: {fileID: 8660267421912196493, guid: fd1cbff545e31ab47aae01e515ad1c76, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd1cbff545e31ab47aae01e515ad1c76, type: 3}
 --- !u!224 &106068413 stripped
@@ -667,6 +671,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim_eyeUIControl: {fileID: 1762035105}
   anim_shoeUIControl: {fileID: 306806872}
+  tMP_Text: {fileID: 0}
+  distanceCheckingForWalking: {fileID: 0}
 --- !u!1001 &931929995
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,16 +17,8 @@ using System;
 public class UIController : MonoBehaviour
 {
 
-    public Animator anim_eyeUIControl; // Camera Window
-    public Animator anim_shoeUIControl; // Camera Window
-
-    public TMP_Text tMP_Text;
-    public DistanceCheckingForWalking distanceCheckingForWalking;
-
-    public void Start()
-    {
-        distanceCheckingForWalking = GameObject.Find("Girl_FBX2020_Prefab(Clone)").GetComponentInChildren<DistanceCheckingForWalking>();
-    }
+    public Animator anim_eyeUIControl; // Animator for the Eye colour change menu UI
+    public Animator anim_shoeUIControl; // Animator for the Shoe colour change menu UI
 
 
     public void Btn_eyeButton()
@@ -43,6 +35,8 @@ public class UIController : MonoBehaviour
         }
 
     }
+
+
     public void Btn_shoeButton()
     {
         if (anim_shoeUIControl.GetBool("isOn") == false)
@@ -57,20 +51,5 @@ public class UIController : MonoBehaviour
         }
 
     }
-
-    public void Update()
-    {
-        //Update the debug UI to show the distance between the camera and the Model
-
-        
-
-            tMP_Text.text = "Current Distance: " + distanceCheckingForWalking.currentDistanceRounded;
-
-        //currentDistance = Vector3.Distance(distanceCube.transform.position, transform.position);
-        //currentDistanceRounded = Mathf.Round(currentDistance * 100) / 100;
-
-    }
-
-
 
 }

@@ -26,11 +26,7 @@ public class DistanceCheckingForWalking : MonoBehaviour
         distanceCube = GameObject.FindGameObjectWithTag("MainCamera");
 
         Test = GameObject.Find("Debug");
-        //debugText = Test.GetComponentInChildren<TMP_Text>();
-
-        //Instantiate(debugText, debugText.transform.position, debugText.transform.rotation);
-
-        //debugText.IsActive = true;
+        debugText = Test.GetComponentInChildren<TMP_Text>();
 
     }
 
@@ -40,7 +36,8 @@ public class DistanceCheckingForWalking : MonoBehaviour
 
         currentDistance = Vector3.Distance(distanceCube.transform.position, transform.position);
         currentDistanceRounded = Mathf.Round(currentDistance * 100) / 100;
-            
+        debugText.text = "Current Distance: " + currentDistanceRounded;
+
         if (currentDistance > distanceToCheck)
         {
             //turn on walking, moving using root motion
@@ -51,11 +48,11 @@ public class DistanceCheckingForWalking : MonoBehaviour
             animController.SetBool("farAway", false);
         }
 
-        if (currentDistance > 5)
-        {
-            animController.SetBool("farAway", false);
-            //Just debug trigger so they can't get too far away if not heading towards camera
-        }
+        //if (currentDistance > 5)
+        //{
+          //  animController.SetBool("farAway", false);
+            //Just debug trigger so the model will not walk too far away if not heading towards camera
+        //}
 
     }
 
