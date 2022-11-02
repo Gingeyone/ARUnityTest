@@ -28,8 +28,8 @@ public class EyeColourSwapping : MonoBehaviour
 
         //once a model is loaded attatch the eye parts for swapping
 
-        leftEyeModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/head_grp/L_eye_geo");
-        rightEyeModel = GameObject.Find("Girl_FBX2020_Prefab/Geometry/claire_model_grp/head_grp/R_eye_geo");
+        leftEyeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/head_grp/L_eye_geo");
+        rightEyeModel = GameObject.Find("Girl_FBX2020_Prefab(Clone)/Geometry/claire_model_grp/head_grp/R_eye_geo");
 
 
 
